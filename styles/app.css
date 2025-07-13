@@ -1,11 +1,18 @@
 /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
 =========
   Fonts
 =========
 */
 @font-face {
     font-family: "YekanBakh Bold";
-    src: url(../fonts/YekanBakh-Bold.woff2) format("woff2");
+    src: url(../fonts/YekanBakh-Bold.woff) format("woff2");
 }
 
 @font-face {
@@ -77,7 +84,140 @@ table {
   Styles Css
 =============
 */
+:root {
+	--text-color: #FFFFFF;
+	--color-one: #1D2939;
+	--color-two: #C9184A;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	font-size: 10px;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
+}
 
 body {
-    font-family: "YekanBakh", sans-serif;
+    font-family: "YekanBakh Medium", sans-serif;
+	font-size: 1.6rem;
+	color: var(--text-color);
+	line-height: 1.5rem;
+}
+
+.wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	min-height: 100vh;
+}
+
+.card {
+	width: 59.2rem;
+	height: 42.4rem;
+	background-image: url("../images/card.png");
+	border-radius: 1.2rem;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.card__wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	gap: 1.6rem;
+	position: absolute;
+	left: -15rem;
+	top: 2rem;
+	-webkit-transition: all 160ms ease-in-out;
+	-o-transition: all 160ms ease-in-out;
+	transition: all 160ms ease-in-out;
+}
+
+.card:hover .card__wrapper {
+	left: 2rem;
+	top: 2rem;
+}
+
+.card__messages {
+	width: 8rem;
+	height: 4.8rem;
+	padding: 1rem 1.6rem;
+	background-color: var(--color-one);
+	border-radius: 5rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	gap: .6rem;
+}
+
+.card__heart {
+	width: 4.8rem;
+	height: 4.8rem;
+	padding: 1.2rem;
+	background-color: var(--color-two);
+	border-radius: 5rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.card__icon {
+	color: var(--text-color);
+}
+
+.card__content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	padding: 3.6rem 2.4rem;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(#000));
+	background: -o-linear-gradient(top, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%);
+	color: var(--text-color);
+	position: absolute;
+	bottom: -14.2rem;
+	right: 0;
+	left: 0;
+	-webkit-transition: all 160ms ease-in-out;
+	-o-transition: all 160ms ease-in-out;
+	transition: all 160ms ease-in-out;
+}
+
+.card:hover .card__content {
+	bottom: 0rem;
+}
+
+.card__content-title {
+	font-family: "YekanBakh Bold";
+	font-size: 2.4rem;
+	margin-bottom: 2rem;
+}
+
+.card__content-caption {
+	font-family: "YekanBakh Regular";
+	font-size: 2rem;
 }
